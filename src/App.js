@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+//import { useEffect } from 'react';
 
 function App() {
+
+  // const [data, setData] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   fetch('http://jsonplaceholder.typicode.com/photos')
+  //     .then(response => {
+  //       if (response.ok) {
+  //         return response.json()
+  //       }
+  //       throw response;
+  //     })
+  //     .then(data => {
+  //       setData(data);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error fetching data: ", error);
+  //       setError(error);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     })
+  // }, []);
+
+  // const photoArray = data.
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Photos-area">
+        <article className="Image">
+          <img src="https://via.placeholder.com/600/92c952" alt = "background" />
+          <p className="Image-text">name</p>
+        </article>
+      </div>
+      <div className="Button-area">
+        
+      </div>
     </div>
   );
 }
