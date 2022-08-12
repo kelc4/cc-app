@@ -9,11 +9,15 @@ function App() {
   const [error, setError] = useState([]);
   const [reRender, setReRender] = useState(false);
 
+  const photos = [];
+
+  //Shuffles data
   const shuffle = (array) => {
     const length = array.length;
     shuffleHelper(array, length);
   }
 
+  // Shuffle Helper Function
   const shuffleHelper = (array, num) => {
     //base case
     if(num <= 1) {
@@ -31,7 +35,9 @@ function App() {
     return shuffleHelper(array, num - 1);
   }
 
+  // Written with the help of https://www.freecodecamp.org/news/fetch-data-react/
   useEffect(() => {
+    const photos = [];
     const fetchPhotos = () => {
       fetch('http://jsonplaceholder.typicode.com/photos')
         .then(response => {
@@ -42,6 +48,7 @@ function App() {
         })
         .then(data => {
           setData(data);
+          photos.push(data.url);
         })
         .catch(error => {
           console.error("Error fetching data: ", error);
@@ -60,11 +67,32 @@ function App() {
     setReRender(!reRender);
   };
 
+  // Load Images into browser
+  const preloadImages = (array) => {
+    if (!preloadImages.list) {
+      preloadImages.list = [];
+    }
+    var list = preloadImages.list;
+    for(var i = 0; i < array.length; i++) {
+      var img = new Image();
+      img.onload = function() {
+        var index = list.indexOf(this);
+        if(index !== -1) {
+          list.splice(index, 1);
+        }
+      }
+      list.push(img);
+      img.src = array[i];
+    }
+  }
+  preloadImages(photos);
+
   return (
     <div className="App">
+      {/* Top area for photos */}
       <div className="Photos-area">
         {data.map((photo) => (
-          <article className = "Article" key="{photo}">
+          <article className = "Photo-container" key="{photo}">
             <img className="Image" src= {photo.url} alt={photo.id}/>
             <h1 className="Image-text">{photo.title}</h1>
           </article>
@@ -72,7 +100,7 @@ function App() {
 
       </div>
 
-
+      {/* Bottom area for shuffle button */}
       <div className="Button-area">
         <button className="Button" onClick={handleClick}>
           <b>Shuffle</b>
