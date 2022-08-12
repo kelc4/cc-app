@@ -1,44 +1,55 @@
 .App {
+  /* justify-content: center;
+  align-items: center; */
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  scroll-behavior: smooth;
 }
 
 .Photos-area {
   height: 90vh;
+  width: 100%;
   background-color: lightskyblue;
   display: flex;
-  flex-direction: row;
+  /* scroll-behavior: smooth; */
 }
 
 .Article {
   height: 100%;
-  align-items: center;
+  width: 100%;
   display: inline-block;
   padding: 10px;
 }
 
 .Image {
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   border-color: black;
   border-style: solid;
   border-width: 3px;
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 15px 15px #777777;
-  text-align: center;
-  justify-content: center;
 }
 
 .Image-text {
-  transform: rotate(-45deg);
+  position: sticky;
+  /* transform: rotate(-45deg); */
   font-size: 24px;
   text-align: center;
+  margin: auto;
+  background-color: blueviolet;
 }
 
 .Button-area {
   height: 10vh;
   background-color: lightpink;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button {
+  position: absolute;
+  background-color: blue;
+  height: 45px;
+  width: 75px;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
