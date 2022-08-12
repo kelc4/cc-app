@@ -33,13 +33,32 @@ function App() {
   return (
     <div className="App">
       <div className="Photos-area">
-        <article className="Image">
-          <img src="https://via.placeholder.com/600/92c952" alt = "background" />
-          <p className="Image-text">name</p>
+        <article className = "Article">
+          <img className="Image" src= "https://via.placeholder.com/600/92c952" alt="background"/>
+          <h1 className="Image-text">AHHHHHHHHHH</h1>
+        </article>
+
+        <article className = "Article">
+          <img className="Image" src= "https://via.placeholder.com/600/92c952" alt="background"/>
+          <h1 className="Image-text">AHHHHHHHHHH</h1>
+        </article>
+
+        <article className = "Article">
+          <img className="Image" src= "https://via.placeholder.com/600/92c952" alt="background"/>
+          <h1 className="Image-text">AHHHHHHHHHH</h1>
+        </article>
+
+        <article className = "Article">
+          <img className="Image" src= "https://via.placeholder.com/600/92c952" alt="background"/>
+          <h1 className="Image-text">AHHHHHHHHHH</h1>
         </article>
       </div>
+
+      
       <div className="Button-area">
-        
+        <button>
+          <h1>Shuffle</h1>
+        </button>
       </div>
     </div>
   );
