@@ -9,3 +9,6 @@ Requirements: Create a simple web app that accomplishes the following:
 - The photos that are downloaded must be cached so that if the app is terminated, the next session should not have to download previously downloaded images again.
 
 - Add a button to the screen below the scrollable photo list. Tapping this button will reorder the list in completely random order. Use a recursive function to reorder the list.
+
+<hr>
+App started using React Create App --> https://create-react-app.dev/docs/getting-started/
